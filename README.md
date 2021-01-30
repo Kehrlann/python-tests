@@ -34,6 +34,10 @@ $ pytest fizzbuzz/test_fizzbuzz.py
 
 ---
 
+---
+
+---
+
 ## Exercice 1: Lire des tests
 
 Pour le premier exercice, une suite de tests est disponible dans `fizzbuzz/test_fizzbuzz.py` . Vous devez implémenter la fonctionnalité dans le fichier `fizzbuzz/fizzbuzz.py` . À vous de lire le fichier de tests pour comprendre ce que doit faire `fizzbuzz` puis de l'implémenter. Une fois l'exercice terminé, tous les tests liés doivent être verts!
@@ -49,6 +53,10 @@ Ou bien, un par un:
 ```
 $ pytest fizzbuzz/test_fizzbuzz.py::test_returns_a_list
 ```
+
+---
+
+---
 
 ---
 
@@ -71,6 +79,10 @@ Trois règles, qui rendent cet exercice intéressant:
 3. Ne testez que des chaînes de caractères **valides**. Pas la peine de s'encombrer des cas non valides ou non spécifiés.
 
 Vraiment ! Arrêtez vous à chaque séparateur "ligne" comme ci-dessous:
+
+---
+
+---
 
 ---
 
@@ -97,6 +109,10 @@ Hop hop hop. On ne lit pas la suite.
 
 ---
 
+---
+
+---
+
 #### 2. Nombre illimité d'entiers
 
 Changez `add` pour prendre un nombre inconnu d'entiers.
@@ -105,11 +121,19 @@ N'oubliez pas de commencer par le test ...
 
 ---
 
+---
+
+---
+
 #### 3. Saut de ligne comme délimiteur
 
 Permettez l'utilisation d'un saut de ligne (c'est à dire `\n`) comme délimiteur, en plus de la virgule.
 
 Par exemple, `"1\n2,3"` donnera 6. Pour ceux qui se posent des questions, notez que `1,\n` n'est pas une entrée valide (mais pas besoin d'écrire un test, c'est juste une clarification).
+
+---
+
+---
 
 ---
 
@@ -123,6 +147,10 @@ La première ligne est optionnelle, tous les scénarios précédents doivent con
 
 ---
 
+---
+
+---
+
 #### 5. Entiers négatifs
 
 Appeler `add` avec un entier négatif renverra un message d'erreur, qui commencera par `negatives not allowed` et contiendra l'entier négatif contenu dans la chaîne.
@@ -133,7 +161,15 @@ S'il y a plusieurs entiers négatifs, affichez-les tous dans le message d'erreur
 
 ---
 
+---
+
+---
+
 **STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais l'exercice 3 du TP sera plus compliqué, donc je vous recommande de continuer un peu :)
+
+---
+
+---
 
 ---
 
@@ -143,7 +179,15 @@ Les entiers supérieurs à 1000 doivent être ignorés, donc `2 + 1001 = 2`.
 
 ---
 
+---
+
+---
+
 Ici ca va commencer à se corser un peu. Certains d'entre vous seront contents d'avoir écrit des tests, parce que vous risquez de faire bugger certains des cas précédents...
+
+---
+
+---
 
 ---
 
@@ -152,6 +196,10 @@ Ici ca va commencer à se corser un peu. Certains d'entre vous seront contents d
 Les délimiteurs peuvent avoir autant de caractères que souhaité, avec le format suivant: `//[<DELIMITER>]\n`. Par exemple `//[***]\n1***2***3` renverra 6.
 
 Hint: ici, les expressions régulières sont les bienvenues.
+
+---
+
+---
 
 ---
 
