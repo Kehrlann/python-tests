@@ -97,7 +97,7 @@ def add(input_str: str) -> int:
 
 La chaîne de caractères contient jusqu'à deux entiers, séparés par des virgules. La fonction renvoie leur somme.
 
-Par exemple, "", "1" ou "1,2". Pour "", ça renvoie 0.
+Par exemple, `""`, `"1"` ou `"1,2"`. Pour `""`, ça renvoie 0.
 
 - Commencez par le cas le plus simple, la chaîne vide (c'est déjà fait pour vous).
 - Puis passez à chacun des cas suivants.
@@ -129,7 +129,7 @@ N'oubliez pas de commencer par le test ...
 
 Permettez l'utilisation d'un saut de ligne (c'est à dire `\n`) comme délimiteur, en plus de la virgule.
 
-Par exemple, `"1\n2,3"` donnera 6. Pour ceux qui se posent des questions, notez que `1,\n` n'est pas une entrée valide (mais pas besoin d'écrire un test, c'est juste une clarification).
+Par exemple, `1\n2,3` donnera 6. Pour ceux qui se posent des questions, notez que `1,\n` n'est pas une entrée valide (mais pas besoin d'écrire un test, c'est juste une clarification).
 
 ---
 
