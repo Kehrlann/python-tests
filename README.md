@@ -203,7 +203,7 @@ Hint: ici, les expressions régulières sont les bienvenues.
 
 ---
 
-#### 8. `Grand Finale`
+#### 8. _Ultimate Grand Finale_
 
 Autorisez autant de délimiteurs que souhaité, selon le format: `//[delim1][delim2][delim3]\n`. Par exemple `//[*][%]\n1*2%3` renverra 6.
 
