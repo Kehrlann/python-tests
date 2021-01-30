@@ -62,7 +62,7 @@ $ pytest fizzbuzz/test_fizzbuzz.py::test_returns_a_list
 
 ## Exercice 2: Écrire des tests
 
-Le deuxième exercice un "kata" - un exercice connu, créer pour la pratique, dans l'esprit des katas de karaté. Ce kata a été créé par Roy Osherove, avec la [version originale ici](https://osherove.com/tdd-kata-1).
+Le deuxième exercice un "kata" - un exercice connu, créer pour la pratique, dans l'esprit des katas de karaté. Ce kata a été créé par Roy Osherove, avec la [version originale ici](https://osherove.com/tdd-kata-1). L'idée du kata est de pratiquer le TDD, donc de toujours écrire un test avant de d'écrire du code.
 
 Vous devez écrire des tests pour chacune des fonctionnalités de l'exercice dans `string-calculator/test_calculator.py` ; et l'implémentation dans `string-calculator/calculator.py`. Vous pouvez éxécuter les tests avec:
 
