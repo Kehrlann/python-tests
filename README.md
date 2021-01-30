@@ -32,7 +32,7 @@ Vous pouvez également lancer un test en particulier:
 $ pytest fizzbuzz/test_fizzbuzz.py
 ```
 
---- 
+---
 
 ## Exercice 1: Lire des tests
 
@@ -62,78 +62,101 @@ Vous devez écrire des tests pour chacune des fonctionnalités de l'exercice dan
 $ pytest string-calculator/test_calculator.py
 ```
 
-### Énoncé
+### Énoncé (traduit)
 
+Trois règles, qui rendent cet exercice intéressant:
+
+1. Essayez de ne pas lire "à l'avance" les consignes
+2. Faites une seule consigne à la fois (sans lire la suivante). Tout l'intérêt de l'exercice est d'apprendre à travailler de manière incémentale.
+3. Ne testez que des chaînes de caractères **valides**. Pas la peine de s'encombrer des cas non valides ou non spécifiés.
+
+Vraiment ! Arrêtez vous à chaque séparateur "ligne" comme ci-dessous:
+
+---
+
+#### 1. Add
+
+Implémentez la fonction `add` dans `string-calculator/calculator.py`. Cette fonction prend en entrée une chaîne de caractères, et renvoie un entier:
+
+```python
+def add(input_str: str) -> int:
+    # ...
 ```
-    Create a simple String calculator with a method signature:
 
-    ———————————————
+La chaîne de caractères contient jusqu'à deux entiers, séparés par des virgules. La fonction renvoie leur somme.
 
-    int Add(string numbers)
+Par exemple, "", "1" ou "1,2". Pour "", ça renvoie 0.
 
-    ———————————————
+- Commencez par le cas le plus simple, la chaîne vide (c'est déjà fait pour vous).
+- Puis passez à chacun des cas suivants.
+- Avant chaque cas, écrivez un test!
+- Rappelez-vous: il faut résoudre les choses le plus simplement possible, et ne pas faire "plusieurs cas" d'un coup.
+- A chaque fois que vos tests sont au vert, réfléchissez à comment améliorer votre code, le rendre plus simple, etc (faites du _refactoring_).
 
-    The method can take up to two numbers, separated by commas, and will return their sum. 
+Hop hop hop. On ne lit pas la suite.
 
-    for example “” or “1” or “1,2” as inputs.
+---
 
-    (for an empty string it will return 0) 
+#### 2. Nombre illimité d'entiers
 
-    Hints:
+Changez `add` pour prendre un nombre inconnu d'entiers.
 
-    ——————
+N'oubliez pas de commencer par le test ...
 
-     - Start with the simplest test case of an empty string and move to one and two numbers
+---
 
-     - Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
+#### 3. Saut de ligne comme délimiteur
 
-     - Remember to refactor after each passing test
+Permettez l'utilisation d'un saut de ligne (c'est à dire `\n`) comme délimiteur, en plus de la virgule.
 
-    ———————————————————————————————
+Par exemple, `"1\n2,3"` donnera 6. Pour ceux qui se posent des questions, notez que `1,\n` n'est pas une entrée valide (mais pas besoin d'écrire un test, c'est juste une clarification).
 
-    Allow the Add method to handle an unknown amount of numbers
+---
 
-    ————————————————————————————————
+#### 4. Délimiteur configurable
 
-    Allow the Add method to handle new lines between numbers (instead of commas).
+Pour choisir un délimiteur différent, la chaîne commencera par une ligne du style `//<DELIMITEUR>\n`, où `<DELIMITEUR>` est un caractère unique, suivi d'une ligne avec les nombres.
 
-        the following input is ok: “1\n2,3” (will equal 6)
+Par exemple, `//;\n1;2` renverra 3 - le délimiteur est ici `;`.
 
-        the following input is NOT ok: “1,\n” (not need to prove it - just clarifying)
+La première ligne est optionnelle, tous les scénarios précédents doivent continuer de fonctionner.
 
-        ——————————————————————————————-
+---
 
-    Support different delimiters
+#### 5. Entiers négatifs
 
-        to change a delimiter, the beginning of the string will contain a separate line that looks like this: “//[delimiter]\n[numbers…]” for example “//;\n1;2” should return three where the default delimiter is ‘;’ .
+Appeler `add` avec un entier négatif renverra un message d'erreur, qui commencera par `negatives not allowed` et contiendra l'entier négatif contenu dans la chaîne.
 
-        the first line is optional. all existing scenarios should still be supported
+S'il y a plusieurs entiers négatifs, affichez-les tous dans le message d'erreur.
 
-        ————————————————————————————————
+(Vous avez remarqué ? Il y avait deux cas, ici!)
 
-    Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed. 
+---
 
-    if there are multiple negatives, show all of them in the exception message.
+**STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais l'exercice 3 du TP sera plus compliqué, donc je vous recommande de continuer un peu :)
 
-    ————————————————————————————————
+---
 
-    STOP HERE if you are a beginner. Continue if you can finish the steps so far in less than 30 minutes.
+#### 6. Entiers supérieurs à 1000
 
-    ————————————————————————————————
+Les entiers supérieurs à 1000 doivent être ignorés, donc `2 + 1001 = 2`.
 
-    Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+---
 
-    ————————————————————————————————
+Ici ca va commencer à se corser un peu. Certains d'entre vous seront contents d'avoir écrit des tests, parce que vous risquez de faire bugger certains des cas précédents...
 
-    Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1***2***3” should return 6
+---
 
-    ————————————————————————————————
+#### 7. Délimiteurs avec plusieurs caractères
 
-    Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[*][%]\n1*2%3” should return 6.
+Les délimiteurs peuvent avoir autant de caractères que souhaité, avec le format suivant: `//[<DELIMITER>]\n`. Par exemple `//[***]\n1***2***3` renverra 6.
 
-    ————————————————————————————————
+Hint: ici, les expressions régulières sont les bienvenues.
 
-    make sure you can also handle multiple delimiters with length longer than one char
+---
 
-———————————————————————————————— 
-```
+#### 8. `Grand Finale`
+
+Autorisez autant de délimiteurs que souhaité, selon le format: `//[delim1][delim2][delim3]\n`. Par exemple `//[*][%]\n1*2%3` renverra 6.
+
+Vous devez supporter des délimiteurs de longueur >= 1 caractère.
