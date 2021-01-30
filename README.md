@@ -195,7 +195,7 @@ Ici ca va commencer à se corser un peu. Certains d'entre vous seront contents d
 
 Les délimiteurs peuvent avoir autant de caractères que souhaité, avec le format suivant: `//[<DELIMITER>]\n`. Par exemple `//[***]\n1***2***3` renverra 6.
 
-Hint: ici, les expressions régulières sont les bienvenues.
+Hint: ici, les expressions régulières peuvent être utiles... Mais pas obligatoires!
 
 ---
 
