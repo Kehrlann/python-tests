@@ -165,7 +165,7 @@ S'il y a plusieurs entiers négatifs, affichez-les tous dans le message d'erreur
 
 ---
 
-**STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais l'exercice 3 du TP sera plus compliqué, donc je vous recommande de continuer un peu :)
+**STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais on continue!
 
 ---
 
