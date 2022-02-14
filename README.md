@@ -60,9 +60,64 @@ $ pytest fizzbuzz/test_fizzbuzz.py::test_returns_a_list
 
 ---
 
-## Exercice 2: Écrire des tests
+## Exercice 2: Écrire vos premiers tests
 
-Le deuxième exercice un "kata" - un exercice connu, créer pour la pratique, dans l'esprit des katas de karaté. Ce kata a été créé par Roy Osherove, avec la [version originale ici](https://osherove.com/tdd-kata-1). L'idée du kata est de pratiquer le TDD, donc de toujours écrire un test avant de d'écrire du code.
+Le deuxième exercice vous fait tester du code déjà écrit. Nous allons regarder la classe `Snake`, dans `snake/snake.py`. Vous allez éditer `snake/test_snake.py`, et ajouter des tests pour vérifier le comportement de la fonction `change_direction(new_direction)`.
+
+La fonction `change_direction` doit respecter les règles suivantes:
+
+- On lui passe une "direction" en paramètre
+- Si le mouvement est autorisé, la direction change et la fonction renvoie `True`
+- Si le mouvement n'est pas autorisé, la direction ne change pas, et la fonction renvoie `False`
+- Le seul mouvement non autorisé est le "retour en arrière"arrière. Par exemple si la direction courante est `Direction.UP`, le snake ne peut pas changer de direction vers `Direction.DOWN`
+
+Notez que l'attribut `Snake.__direction` est _privé_. Vous ne devez donc pas y toucher dans vos tests. Vous pouvez par contre utiliser le constructeur, `Snake.sgments`, `Snake.move()`, et bien sûr `Snake.change_direction`.
+
+---
+
+
+En partant d'un snake avec les segments `[(5, 4), (6, 4), (6, 5), (7, 5)]` et une direction initiale `Direction.RIGHT`, écrivez des tests (1 par cas) pour vérifier que:
+- Le snake peut aller en haut
+- Le snake peut aller en bas
+- Le snake peut aller à droite
+- Le snake **ne peut pas** aller à gauche!
+
+En exécutant les tests, ils devraient tous être au vert.
+
+---
+
+Vérifiez que vos tests vérifient correctement le comportement, en changeant les premières lignes de `snake/test_snake.py`: vous allez utiliser une implémentation bugguée du snake:
+
+Avant:
+
+```python
+from snake import Snake, Direction
+# from broken_snake import Snake, Direction
+```
+
+Après:
+
+```python
+# from snake import Snake, Direction
+from broken_snake import Snake, Direction
+```
+
+Exécutez les tests, au moins un test devrait échouer.
+
+
+---
+
+Bonus: regroupez tous vos tests dans une classe, et utilisez une `setup_method` pour créer le snake.
+
+---
+
+---
+
+---
+
+## Exercice 3: TDD
+
+Le troisième exercice un "kata" - un exercice connu, créer pour la pratique, dans l'esprit des katas de karaté. Ce kata a été créé par Roy Osherove, avec la [version originale ici](https://osherove.com/tdd-kata-1). L'idée du kata est de pratiquer le TDD, donc de toujours écrire un test avant de d'écrire du code.
 
 Vous devez écrire des tests pour chacune des fonctionnalités de l'exercice dans `string-calculator/test_calculator.py` ; et l'implémentation dans `string-calculator/calculator.py`. Vous pouvez éxécuter les tests avec:
 
@@ -165,7 +220,7 @@ S'il y a plusieurs entiers négatifs, affichez-les tous dans le message d'erreur
 
 ---
 
-**STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais on continue!
+**STOP** L'exercice original recommande aux débutants de s'arrêter ici... Mais nous allons continuer jusqu'au bout!
 
 ---
 
